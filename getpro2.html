@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Get Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        @media only screen and (orientation: landscape) and (min-width: 800px) {
+            /* Set in JS
+            body {
+                margin-left: 200px;
+                margin-right: 200px;
+            } */
+        }
+
+        ul {
+            list-style: outside;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        img.logo {
+            width: auto;
+            height: 30px;
+            margin: 0px;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+
+        img.button {
+            width: 230px;
+            height: auto;
+            border-radius: 10px;
+            margin: 0px;
+            vertical-align: middle;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        img.qr {
+            width: 250px;
+            height: auto;
+            margin: 0px;
+        }
+
+        button {
+            background-color: transparent;
+            border: transparent;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            margin: 5px;
+            min-width: 180px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(245, 245, 245);
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        @media screen and (max-width: 700px) {
+            /* Set in JS. That also takes into account zoom level.
+            form {
+                display: block;
+            }
+             */
+        }
+
+        .button-text {
+            display: inline;
+            font-family: sans-serif;
+            vertical-align: middle;
+            color: rgb(87, 0, 87);
+        }
+
+        div.card {
+            margin: 20px;
+            padding: 10px;
+            border: solid transparent;
+            border-width: thin;
+            border-radius: 10px;
+            display: block;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        div.header {
+            margin: 30px;
+        }
+
+        /*
+        table {
+            border-spacing: 30px;
+        }
+         */
+
+        td {
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+            border-color: transparent;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #payment-methods:link,
+        #tnc:link {
+            color: black;
+        }
+
+        #payment-methods:visited,
+        #tnc:visited {
+            color: black;
+        }
+    </style>
+
+    <script>
+        var availWidth = screen.availWidth;
+
+        document.write("<style>");
+        if (screen.availHeight < screen.availWidth) {
+            var margin = (screen.availWidth - screen.availHeight) / 3;
+            availWidth = screen.availWidth - margin * 2;
+            document.write("body { margin-left: " + margin + "px; margin-right: " + margin + "px; }");
+        } else {
+            document.write("div.card { margin-left: 5px; margin-right: 5px; }");
+            document.write("div.header { margin-left: 15px; margin-right: 15px; }");
+        }
+
+        if (availWidth < 700) {
+            // Show all buttons vertically if there is not enough space.
+            document.write("form { display: block; }");
+        }
+
+        document.write("</style>");
+
+        // Reload page on page resize (workaround for zoom): https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event
+        // window.onresize = location.reload() and window.addEventListener("resize", defined_func()) loop infinitely: https://stackoverflow.com/a/15455463/9165920
+        // Bad idea. Also reloads while scrolling on phone due to top bar auto hide.
+
+        // Reload page on screen rotation: https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/onchange
+        // screen.orientation.onchange = location.reload() and screen.orientation.addEventListener("change", defined_func()) loop infinitely.
+        screen.orientation.addEventListener("change", function () {
+            location.reload();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>How to get the Pro version</h2>
+
+        <div style="text-align: end;">
+            <form action="https://github.com/mirfatif/MyLocation" target="_blank">
+                <button type="submit">
+                    <img class="logo" src="logos/my_loc.png" />
+                    <h3 class="button-text"> MyLocation</h3>
+                </button>
+            </form>
+
+            <form action="https://github.com/mirfatif/WhatsRunning" target="_blank">
+                <button type="submit">
+                    <img class="logo" src="logos/w_run.png" />
+                    <h3 class="button-text"> WhatsRunning</h3>
+                </button>
+            </form>
+
+            <form action="https://github.com/mirfatif/PermissionManagerX" target="_blank">
+                <button type="submit">
+                    <img class="logo" src="logos/pmx.png" />
+                    <h3 class="button-text"> PMX</h3>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <p><b>Note:</b></p>
+        <p style="margin-left: 40px">This is NOT the Play Store version. If you've already purchased the app from Play Store, please reinstall the app from Play Store.</p>
+    </div>
+
+    <div class="card">
+        <p><a href="#tnc" id="tnc"><b>Terms and Conditions:</b></a></p>
+        <ul>
+            <li><b>Refunds</b> are possible only for the purchases made through Play Store, NOT for this Pro version. You can test the free version or get a trial before purchasing.</li>
+            <li>License verification is a recurring process and it requires an active <b>internet connection</b>. We do not send any of your personal information to our servers.</li>
+            <li>Your purchase is associated with your <b>email ID</b> you use for the first time activation. You must use the same email ID for the future correspondence.</li>
+            <li>Activation key is <b>valid only for one device</b>. You should get additional keys if you want to use the app on multiple devices.</li>
+            <ul>
+                <li>Once the key is entered on a device, it can be used on another device only after 24 hours.</li>
+                <p style="margin-left: 40px;">We believe in user's privacy. So we do not track your device identifiers to remember you. Instead, for every app installation, a random identity is generated, which gets reset if you clear app's data or reinstall the app. So after every reinstallation, or clearing the app data, the device is considered a different device.</p>
+                <li>
+                    <p>If you want to reuse the key (on the same device or a different device) too frequently, make sure to deactivate it before reactivating.</p>
+                    <img style="border-radius: 10px;" src="getpro/deactivate_pro.png" />
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="card">
+        <p><b>Get the Activation Key:</b></p>
+
+        <ul>
+            <li>Please read the <a href="#tnc">Terms and Conditions</a>.</li>
+            <li>Make payment using any of the <a href="#payment-methods">methods</a> given below.</li>
+            <li>Send the payment details to <a href="mailto:mirfatif.dev@gmail.com">mirfatif.dev@gmail.com</a> to get the activation key.</li>
+        </ul>
+
+        <p>Usually you'll receive the activation key within an hour but sometimes it may take up to 24 hours.</p>
+
+        <p><b>Finally:</b></p>
+        <p>Please DO READ the <a href="#tnc">Terms and Conditions</a>.</p>
+    </div>
+
+    <div class="card">
+        <p><b>Get a Trial Key:</b></p>
+        <p>Drop an email at the address given above. Or even better, talk to the <a href="https://t.me/IrfanAppsBot">Telegram Bot</a>.</p>
+    </div>
+
+    <div class="card">
+        <p><b>Activate:</b></p>
+        <ul>
+            <li>Install the latest release of Pro version from the Github repo or the latest beta from the <a href="https://t.me/mirfatifApps">Telegram Channel</a>.</li>
+            <li>Open the app. It shows "<i>License verification failed</i>" dialog.</li>
+            <li>Enter the activation key and tap on the <b>Activate</b> button.<br /><img style="border-radius: 10px;" src="getpro/activate_pro.png" /></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <a id="payment-methods" href="#payment-methods">
+            <h2>Payment Methods</h2>
+        </a>
+
+        <table>
+            <tr>
+                <td><span style="display: block; text-align: center;"><b>Bank Transfer</b> (SWIFT<sup>*</sup>)</span><img class="qr" src="getpro/bank_qr.webp" /><span style="display: block; text-align: center; font-size: x-small;"><sup>*</sup>Can also be routed via services like WesternUnion</span></td>
+                <td><span style="display: block; text-align: center;"><b>Bitcoin</b></span><img style="margin-top: 10px; margin-bottom: 10px;" class="qr" src="getpro/btc_qr.webp" /><a style="display: block; text-align: center; font-size: x-small;" href="http://mirfatif.github.io/mirfatif/bitcoin_redirect">18ijfsv5fcDKQ6CTe4wycKxZMmti4oUXjW</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.payoneer.com/solutions/make-a-payment"><img class="button" src="logos/payoneer.jpg" alt="Payoneer" /></a><span style="display: block; text-align: center; font-size: x-small;">mirfatif@gmail.com</span></td>
+                <td><a href="https://www.buymeacoffee.com/mirfatif"><img style="margin-top: 15px; margin-bottom: 15px;" class="button" src="https://cdn.buymeacoffee.com/buttons/default-white.png" alt="Buy Me A Coffee" /></a></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

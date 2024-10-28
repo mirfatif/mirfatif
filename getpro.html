@@ -39,10 +39,10 @@
         }
 
         img.button {
-            width: 230px;
+            width: 150px;
             height: auto;
             border-radius: 10px;
-            margin: 0px;
+            margin: 10px;
             vertical-align: middle;
             padding-left: 10px;
             padding-right: 10px;
@@ -102,6 +102,7 @@
             border-color: transparent;
             display: inline-block;
             margin: 10px;
+            min-height: 85px;
         }
 
         a {
@@ -120,6 +121,15 @@
         #payment-methods:visited,
         #tnc:visited {
             color: black;
+        }
+
+        a.close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            padding: 5px;
+            cursor: pointer;
         }
     </style>
 
@@ -179,6 +189,10 @@
     </div>
 
     <div class="card">
+        <p style="color: red;">Due to payment processing issues, we are not currently accepting direct payments. We are sorry for the inconvenience. Pro versions of our apps are available on Play Store.</p>
+    </div>
+
+    <div class="card">
         <p><b>Note:</b></p>
         <p style="margin-left: 40px">This is NOT the Play Store version. If you've already purchased the app from Play Store, please reinstall the app from Play Store.</p>
     </div>
@@ -235,17 +249,52 @@
             <h2>Payment Methods</h2>
         </a>
 
-        <table>
-            <tr>
-                <td><span style="display: block; text-align: center;"><b>Bank Transfer</b> (SWIFT<sup>*</sup>)</span><img class="qr" src="getpro/bank_qr.webp" /><span style="display: block; text-align: center; font-size: x-small;"><sup>*</sup>Can also be routed via services like WesternUnion</span></td>
+        <p style="color: red;">Due to payment processing issues, we are not currently accepting direct payments. We are sorry for the inconvenience. Pro versions of our apps are available on Play Store.</p>
+
+        <!-- <table> -->
+        <!-- <tr>
+                <td><span style="display: block; text-align: center;"><b>Bank Transfer</b> (SWIFT)</span><img class="qr" src="getpro/bank_qr.webp" /><span style="display: block; text-align: center; font-size: x-small;"><sup>*</sup>Can also be routed via MTOs like <a href="https://wise.com/">Wise</a></span></td>
                 <td><span style="display: block; text-align: center;"><b>Bitcoin</b></span><img style="margin-top: 10px; margin-bottom: 10px;" class="qr" src="getpro/btc_qr.webp" /><a style="display: block; text-align: center; font-size: x-small;" href="http://mirfatif.github.io/mirfatif/bitcoin_redirect">18ijfsv5fcDKQ6CTe4wycKxZMmti4oUXjW</a></td>
+            </tr> -->
+        <!-- <tr>
+                <td><a href="https://wise.com/us/send-money/send-money-to-pakistan"><img class="button" src="logos/wise.webp" alt="Wise" /></a><span style="display: block; text-align: center; font-size: x-small;"><a style="cursor: pointer;" onclick="document.getElementById('wise-dialog').showModal()">Account detail</a></span></td>
+                <td><a href="https://www.xoom.com/pakistan/send-money"><img class="button" src="logos/xoom.png" alt="Xoom" /></a><span style="display: block; text-align: center; font-size: x-small;"><a style="cursor: pointer;" onclick="document.getElementById('xoom-dialog').showModal()">Account detail</a></span></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.remitly.com/us/en/pakistan/pricing"><img class="button" src="logos/remitly.png" alt="Remitly" /></a><span style="display: block; text-align: center; font-size: x-small;"><a style="cursor: pointer;" onclick="document.getElementById('xoom-dialog').showModal()">Account detail</a></span></td>
             </tr>
             <tr>
                 <td><a href="https://www.payoneer.com/solutions/make-a-payment"><img class="button" src="logos/payoneer.jpg" alt="Payoneer" /></a><span style="display: block; text-align: center; font-size: x-small;">mirfatif@gmail.com</span></td>
+                <td><a href="http://mirfatif.github.io/mirfatif/bitcoin_redirect"><img class="button" src="logos/btc_button.png" alt="Bitcoin" /></a><span style="display: block; text-align: center; font-size: x-small;"><a style="cursor: pointer;" onclick="document.getElementById('btc-dialog').showModal()">Bitcoin address</a></span></td>
+            </tr> -->
+        <!-- <tr>
                 <td><a href="https://www.buymeacoffee.com/mirfatif"><img style="margin-top: 15px; margin-bottom: 15px;" class="button" src="https://cdn.buymeacoffee.com/buttons/default-white.png" alt="Buy Me A Coffee" /></a></td>
-            </tr>
-        </table>
+            </tr> -->
+        <!-- Patreon, Skrill, Elevate -->
+        <!-- </table> -->
     </div>
+
+    <dialog id="xoom-dialog">
+        <a class="close-button" onclick="document.getElementById('xoom-dialog').close()">&times;</a>
+        <p><b>Country:</b> Pakistan</p>
+        <p><b>Mobile Wallet:</b> JazzCash</p>
+        <p><b>Account:</b> +923454848394</p>
+        <p><b>Title:</b> Muhammad Irfan Latif</p>
+    </dialog>
+
+    <dialog id="wise-dialog">
+        <a class="close-button" onclick="document.getElementById('wise-dialog').close()">&times;</a>
+        <p><b>Country:</b> Pakistan</p>
+        <p><b>Bank:</b> Allied Bank Limited</p>
+        <p><b>Account:</b> +923454848394</p>
+        <p><b>Title:</b> Muhammad Irfan Latif</p>
+    </dialog>
+
+    <dialog id="btc-dialog">
+        <a class="close-button" onclick="document.getElementById('btc-dialog').close()">&times;</a>
+        <h3>Bitcoin</h3>
+        <p>18ijfsv5fcDKQ6CTe4wycKxZMmti4oUXjW</p>
+    </dialog>
 
 </body>
 

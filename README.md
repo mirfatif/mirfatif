@@ -9,6 +9,7 @@ I'm Irfan.
     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/mirfatif/NoorUlHuda"><img src="logos/nuh.png" height="30"/> NUH</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
     <td>&nbsp;<a href="https://github.com/mirfatif/MyLocation"><img src="logos/my_loc.png" height="30"/> MyLocation</a></td>
     <td><a href="https://github.com/mirfatif/WhatsRunning"><img src="logos/w_run.png" height="30"/> WhatsRunning</a></td>
+    <td><a href="https://github.com/mirfatif/Fyrypt"><img src="logos/fyrypt.png" height="30"/> Fyrypt</a></td>
 </table>
 
 - ### What else I do?
